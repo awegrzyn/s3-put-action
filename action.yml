@@ -20,7 +20,7 @@ inputs:
   dry-run:
     description: 'Dot not upload file but display s3cmd command instead'
     required: false
-    default: false
+    default: '0'
 outputs:
   return-code:
     description: 'S3 path to uploaded object'
