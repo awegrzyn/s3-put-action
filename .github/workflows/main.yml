@@ -11,7 +11,7 @@ jobs:
         with:
           file: 'Dockerfile'
           bucket: 's3://test/test'
-          dry-run: '1'
+          dry_run: '1'
         env:
           ACCESS_KEY: 'access_key'
           SECRET_KEY: 'secret_key'

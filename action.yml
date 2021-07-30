@@ -13,11 +13,11 @@ inputs:
     description: 'HOSTNAME:PORT for S3 endpoint (default: s3.cern.ch)'
     required: false
     default: 's3.cern.ch'
-  host-bucket:
+  host_bucket:
     description: 'DNS-style bucket+hostname:port template for accessing a bucket (default: %(bucket)s.s3.cern.ch)'
     default: '%(bucket)s.s3.cern.ch'
     required: false
-  dry-run:
+  dry_run:
     description: 'Dot not upload file but display s3cmd command instead'
     required: false
     default: '0'
