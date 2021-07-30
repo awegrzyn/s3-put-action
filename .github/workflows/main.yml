@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  test-upload:
+    runs-on: ubuntu-latest
+    name: S3 put dry tun
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use action from this repo
+        uses: ./
+        with:
+          file: 'Dockerfile'
+          bucket: 's3://test/test'
+          dry-run: true
+        env:
+          ACCESS_TOKEN: 'access_token'
+          SECRET_KEY: 'secret_key'
+

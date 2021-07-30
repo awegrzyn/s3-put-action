@@ -1,0 +1,32 @@
+# action.yml
+name: 'S3 put'
+description: 'Put a file to S3'
+author: awegrzyn
+inputs:
+  file:
+    description: 'File to upload'
+    required: true
+  bucket:
+    description: 'Bucket and prefix to upload file to'
+    required: true
+  host:
+    description: 'HOSTNAME:PORT for S3 endpoint (default: s3.cern.ch)'
+    required: false
+    default: 's3.cern.ch'
+  host-bucket:
+    description: 'DNS-style bucket+hostname:port template for accessing a bucket (default: %(bucket)s.s3.cern.ch)'
+    default: '%(bucket)s.s3.cern.ch'
+    required: false
+  dry-run:
+    description: 'Dot not upload file but display s3cmd command instead'
+    required: false
+    default: false
+outputs:
+  return-code:
+    description: 'S3 path to uploaded object'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.host }}
+    - ${{ inputs.host-bucket }}
