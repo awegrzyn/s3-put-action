@@ -12,4 +12,6 @@ fi
 
 s3cmd put ${INPUT_FILE} ${INPUT_BUCKET} --host=${INPUT_HOST} --host-bucket=${INPUT_HOST_BUCKET} --access_key=${ACCESS_KEY} --secret_key=${SECRET_KEY}
 
-echo "::set-output name=return-code::$?"
+if [ $? -ne 0 ]; then
+  exit 1;
+fi

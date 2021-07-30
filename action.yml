@@ -16,9 +16,6 @@ inputs:
     description: 'DNS-style bucket+hostname:port template for accessing a bucket (default: %(bucket)s.s3.cern.ch)'
     default: '%(bucket)s.s3.cern.ch'
     required: false
-outputs:
-  return-code:
-    description: 's3cmd return code'
 runs:
   using: 'docker'
   image: 'Dockerfile'
